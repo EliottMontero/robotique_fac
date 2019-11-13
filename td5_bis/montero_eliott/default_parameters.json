@@ -1,0 +1,11 @@
+{
+    "maxSpeed" : 0.7,
+    "maxAcc" : 0.5,
+    "maxThetaSpeed" : 3,
+    "maxThetaAcc" : 1.5,
+    "maxWheelSpeed" : 1.0,
+    "maxWheelAcc" : 10.0,
+    "kp" : 1.0,
+    "ki" : 0.0,
+    "kd" : 0.0
+}

@@ -1,0 +1,3199 @@
+<robot name="metabot">
+
+  <!-- Component robot#1 -->
+
+  <link name="robot_1">
+    <visual>
+      <geometry>
+        <mesh filename="package://c7a9f2373db6a09c89b4c15bbe5caba754ee85c7.stl"/>
+      </geometry>
+      <material name="robot_robot_1_0_material">
+        <color rgba="0.6 0.6 1 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    </visual>
+  <inertial>
+    <origin xyz="0.00153023 -7.33855e-08 -0.000488356" rpy="0 0 0"/>
+    <mass value="0.25"/>
+    <inertia ixx="0.000182075"  ixy="-1.17292e-09"  ixz="9.06551e-09" iyy="0.000194885" iyz="7.31699e-11" izz="0.000374987" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 -0 1.5708"/>
+    <geometry>
+      <cylinder radius="0.0298" length="0.0038"/>
+    </geometry>
+  </collision>
+  </link>
+<link name="robot_1_tip">
+    <inertial>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <mass value="0" />
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+</link>
+<joint name="robot_1_tip" type="fixed">
+<origin xyz="0 0 0" rpy="0 -0 0"/>
+    <parent link="robot_1" />
+    <child link="robot_1_tip" />
+    <axis xyz="0 0 0" />
+</joint>
+
+  <!-- Component wheel#2 -->
+
+  <link name="wheel_2">
+    <visual>
+      <geometry>
+        <mesh filename="package://9752dd362c426c5050c1cbe2739bfe27482e468d.stl"/>
+      </geometry>
+      <material name="wheel_wheel_2_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="1.5708 -0 -2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="0.000252761 -0.000437794 -1.12248e-19" rpy="0 0 0"/>
+    <mass value="0.007245"/>
+    <inertia ixx="8.80591e-07"  ixy="0"  ixz="-2.77556e-25" iyy="8.80591e-07" iyz="-8.60423e-25" izz="1.73204e-06" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="1.5708 -0 -2.61799"/>
+    <geometry>
+      <cylinder radius="0.0098" length="0.0048"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="wheel_2" type="revolute">
+    <parent link="robot_1"/>
+    <child link="wheel_2"/>
+    <axis xyz="0.5 -0.866025 0"/>
+<origin xyz="0.04 -0.069282 0" rpy="0 -0 0"/>
+    <limit effort="10" velocity="20" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#3 -->
+
+  <link name="passive_wheel_3">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_3_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.314159 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_3_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.314159 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_3_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.314159 -2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="2.3926e-05 1.38137e-05 8.50283e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 -0.314159 -2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_3" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_3"/>
+    <axis xyz="0.267616 0.154509 0.951057"/>
+<origin xyz="-0.020591 -0.0118882 0.00772543" rpy="0 -0 7.63278e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#4 -->
+
+  <link name="passive_wheel_4">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_4_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.628318 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_4_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.628318 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_4_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.628318 -2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="4.55099e-05 2.62752e-05 7.23293e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 -0.628318 -2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_4" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_4"/>
+    <axis xyz="0.509036 0.293893 0.809017"/>
+<origin xyz="-0.0175157 -0.0101127 0.0146946" rpy="-2.77556e-17 -5.55112e-17 2.77556e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#5 -->
+
+  <link name="passive_wheel_5">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_5_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.942478 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_5_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.942478 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_5_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.942478 -2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="6.2639e-05 3.61647e-05 5.25503e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 -0.942478 -2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_5" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_5"/>
+    <axis xyz="0.700629 0.404509 0.587785"/>
+<origin xyz="-0.0127259 -0.00734731 0.0202254" rpy="2.77556e-17 5.55112e-17 -5.55112e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#6 -->
+
+  <link name="passive_wheel_6">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_6_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -1.25664 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_6_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -1.25664 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_6_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -1.25664 -2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="7.36366e-05 4.25141e-05 2.76273e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 -1.25664 -2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_6" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_6"/>
+    <axis xyz="0.823639 0.475529 0.309017"/>
+<origin xyz="-0.00669041 -0.00386271 0.0237764" rpy="0 -5.55112e-17 -5.55112e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#7 -->
+
+  <link name="passive_wheel_7">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_7_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.35619 -1.5708 -1.8326"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_7_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.35619 -1.5708 -1.8326"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_7_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.35619 -1.5708 -1.8326"/>
+    </visual>
+  <inertial>
+    <origin xyz="7.74261e-05 4.4702e-05 1.98517e-20" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="2.35619 -1.5708 -1.8326"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_7" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_7"/>
+    <axis xyz="0.866025 0.5 0"/>
+<origin xyz="-2.03185e-18 -7.58298e-18 0.025" rpy="-2.46519e-32 2.46519e-32 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#8 -->
+
+  <link name="passive_wheel_8">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_8_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="7.18553e-16 -1.25664 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_8_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="7.18553e-16 -1.25664 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_8_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="7.18553e-16 -1.25664 0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="7.36366e-05 4.25141e-05 -2.76273e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="7.18553e-16 -1.25664 0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_8" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_8"/>
+    <axis xyz="0.823639 0.475529 -0.309017"/>
+<origin xyz="0.00669041 0.00386271 0.0237764" rpy="-2.77556e-17 5.55112e-17 1.11022e-16"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#9 -->
+
+  <link name="passive_wheel_9">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_9_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="5.66648e-16 -0.942478 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_9_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="5.66648e-16 -0.942478 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_9_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="5.66648e-16 -0.942478 0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="6.2639e-05 3.61647e-05 -5.25503e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="5.66648e-16 -0.942478 0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_9" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_9"/>
+    <axis xyz="0.700629 0.404509 -0.587785"/>
+<origin xyz="0.0127259 0.00734731 0.0202254" rpy="-2.77556e-17 -0 -5.55112e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#10 -->
+
+  <link name="passive_wheel_10">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_10_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -0.628318 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_10_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -0.628318 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_10_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -0.628318 0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="4.55099e-05 2.62752e-05 -7.23293e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 -0.628318 0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_10" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_10"/>
+    <axis xyz="0.509036 0.293893 -0.809017"/>
+<origin xyz="0.0175157 0.0101127 0.0146946" rpy="-2.77556e-17 5.55112e-17 -5.55112e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#11 -->
+
+  <link name="passive_wheel_11">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_11_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="-2.33471e-16 -0.314159 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_11_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="-2.33471e-16 -0.314159 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_11_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="-2.33471e-16 -0.314159 0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="2.3926e-05 1.38137e-05 -8.50283e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="-2.33471e-16 -0.314159 0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_11" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_11"/>
+    <axis xyz="0.267616 0.154509 -0.951057"/>
+<origin xyz="0.020591 0.0118882 0.00772543" rpy="0 -0 6.93889e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#12 -->
+
+  <link name="passive_wheel_12">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_12_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -1.22465e-16 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_12_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -1.22465e-16 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_12_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -1.22465e-16 0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="9.48198e-21 5.47443e-21 -8.9404e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 -1.22465e-16 0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_12" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_12"/>
+    <axis xyz="0 0 -1"/>
+<origin xyz="0.0216506 0.0125 3.06163e-18" rpy="-1.2326e-32 1.2326e-32 6.49419e-33"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#13 -->
+
+  <link name="passive_wheel_13">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_13_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.33472e-16 0.314159 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_13_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.33472e-16 0.314159 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_13_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.33472e-16 0.314159 0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="-2.3926e-05 -1.38137e-05 -8.50283e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="2.33472e-16 0.314159 0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_13" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_13"/>
+    <axis xyz="-0.267616 -0.154509 -0.951057"/>
+<origin xyz="0.020591 0.0118882 -0.00772543" rpy="-2.77556e-17 -0 6.93889e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#14 -->
+
+  <link name="passive_wheel_14">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_14_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.74463e-16 0.628318 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_14_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.74463e-16 0.628318 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_14_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.74463e-16 0.628318 0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="-4.55099e-05 -2.62752e-05 -7.23293e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="2.74463e-16 0.628318 0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_14" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_14"/>
+    <axis xyz="-0.509036 -0.293893 -0.809017"/>
+<origin xyz="0.0175157 0.0101127 -0.0146946" rpy="0 -5.55112e-17 -2.77556e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#15 -->
+
+  <link name="passive_wheel_15">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_15_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.77766e-16 0.942478 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_15_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.77766e-16 0.942478 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_15_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.77766e-16 0.942478 0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="-6.2639e-05 -3.61647e-05 -5.25503e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.77766e-16 0.942478 0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_15" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_15"/>
+    <axis xyz="-0.700629 -0.404509 -0.587785"/>
+<origin xyz="0.0127259 0.00734731 -0.0202254" rpy="-2.77556e-17 -5.55112e-17 -5.55112e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#16 -->
+
+  <link name="passive_wheel_16">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_16_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="1.07783e-15 1.25664 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_16_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="1.07783e-15 1.25664 0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_16_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="1.07783e-15 1.25664 0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="-7.36366e-05 -4.25141e-05 -2.76273e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="1.07783e-15 1.25664 0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_16" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_16"/>
+    <axis xyz="-0.823639 -0.475529 -0.309017"/>
+<origin xyz="0.00669041 0.00386271 -0.0237764" rpy="0 -0 -5.55112e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#17 -->
+
+  <link name="passive_wheel_17">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_17_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0.785398 1.5708 1.309"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_17_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0.785398 1.5708 1.309"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_17_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0.785398 1.5708 1.309"/>
+    </visual>
+  <inertial>
+    <origin xyz="-7.74261e-05 -4.4702e-05 -1.98517e-20" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="0.785398 1.5708 1.309"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_17" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_17"/>
+    <axis xyz="-0.866025 -0.5 0"/>
+<origin xyz="2.03185e-18 7.58298e-18 -0.025" rpy="0 2.46519e-32 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#18 -->
+
+  <link name="passive_wheel_18">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_18_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 1.25664 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_18_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 1.25664 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_18_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 1.25664 -2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="-7.36366e-05 -4.25141e-05 2.76273e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 1.25664 -2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_18" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_18"/>
+    <axis xyz="-0.823639 -0.475529 0.309017"/>
+<origin xyz="-0.00669041 -0.00386271 -0.0237764" rpy="-2.77556e-17 -0 -5.55112e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#19 -->
+
+  <link name="passive_wheel_19">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_19_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.942478 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_19_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.942478 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_19_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.942478 -2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="-6.2639e-05 -3.61647e-05 5.25503e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 0.942478 -2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_19" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_19"/>
+    <axis xyz="-0.700629 -0.404509 0.587785"/>
+<origin xyz="-0.0127259 -0.00734731 -0.0202254" rpy="0 -5.55112e-17 -1.11022e-16"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#20 -->
+
+  <link name="passive_wheel_20">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_20_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.628318 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_20_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.628318 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_20_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.628318 -2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="-4.55099e-05 -2.62752e-05 7.23293e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 0.628318 -2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_20" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_20"/>
+    <axis xyz="-0.509036 -0.293893 0.809017"/>
+<origin xyz="-0.0175157 -0.0101127 -0.0146946" rpy="0 5.55112e-17 -2.77556e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#21 -->
+
+  <link name="passive_wheel_21">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_21_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.314159 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_21_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.314159 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_21_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.314159 -2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="-2.3926e-05 -1.38137e-05 8.50283e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 0.314159 -2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_21" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_21"/>
+    <axis xyz="-0.267616 -0.154509 0.951057"/>
+<origin xyz="-0.020591 -0.0118882 -0.00772543" rpy="2.77556e-17 -5.55112e-17 6.93889e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#22 -->
+
+  <link name="passive_wheel_22">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_22_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 2.44929e-16 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_22_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 2.44929e-16 -2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_22_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 2.44929e-16 -2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="8.87815e-22 -4.5333e-20 8.9404e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 2.44929e-16 -2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_22" type="revolute">
+    <parent link="wheel_2"/>
+    <child link="passive_wheel_22"/>
+    <axis xyz="0 0 1"/>
+<origin xyz="-0.0216506 -0.0125 -6.12322e-18" rpy="0 1.07852e-32 -5.03527e-33"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component wheel#23 -->
+
+  <link name="wheel_23">
+    <visual>
+      <geometry>
+        <mesh filename="package://9752dd362c426c5050c1cbe2739bfe27482e468d.stl"/>
+      </geometry>
+      <material name="wheel_wheel_23_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="1.5708 -0 -0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="0.000252761 0.000437794 -1.12248e-19" rpy="0 0 0"/>
+    <mass value="0.007245"/>
+    <inertia ixx="8.80591e-07"  ixy="0"  ixz="-2.77556e-25" iyy="8.80591e-07" iyz="-8.60423e-25" izz="1.73204e-06" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="1.5708 -0 -0.523599"/>
+    <geometry>
+      <cylinder radius="0.0098" length="0.0048"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="wheel_23" type="revolute">
+    <parent link="robot_1"/>
+    <child link="wheel_23"/>
+    <axis xyz="0.5 0.866025 0"/>
+<origin xyz="0.04 0.069282 0" rpy="0 -0 5.55112e-17"/>
+    <limit effort="10" velocity="20" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#24 -->
+
+  <link name="passive_wheel_24">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_24_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.314159 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_24_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.314159 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_24_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.314159 -0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="-2.3926e-05 1.38137e-05 8.50283e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 -0.314159 -0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_24" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_24"/>
+    <axis xyz="-0.267616 0.154509 0.951057"/>
+<origin xyz="0.020591 -0.0118882 0.00772543" rpy="-2.77556e-17 -5.55112e-17 -4.85723e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#25 -->
+
+  <link name="passive_wheel_25">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_25_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.628318 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_25_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.628318 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_25_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.628318 -0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="-4.55099e-05 2.62752e-05 7.23293e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 -0.628318 -0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_25" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_25"/>
+    <axis xyz="-0.509036 0.293893 0.809017"/>
+<origin xyz="0.0175157 -0.0101127 0.0146946" rpy="2.77556e-17 -5.55112e-17 5.55112e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#26 -->
+
+  <link name="passive_wheel_26">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_26_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.942478 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_26_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.942478 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_26_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.942478 -0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="-6.2639e-05 3.61647e-05 5.25503e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 -0.942478 -0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_26" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_26"/>
+    <axis xyz="-0.700629 0.404509 0.587785"/>
+<origin xyz="0.0127259 -0.00734731 0.0202254" rpy="-2.77556e-17 5.55112e-17 5.55112e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#27 -->
+
+  <link name="passive_wheel_27">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_27_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -1.25664 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_27_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -1.25664 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_27_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -1.25664 -0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="-7.36366e-05 4.25141e-05 2.76273e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 -1.25664 -0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_27" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_27"/>
+    <axis xyz="-0.823639 0.475529 0.309017"/>
+<origin xyz="0.00669041 -0.00386271 0.0237764" rpy="2.77556e-17 -0 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#28 -->
+
+  <link name="passive_wheel_28">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_28_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.35619 -1.5708 0.261799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_28_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.35619 -1.5708 0.261799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_28_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.35619 -1.5708 0.261799"/>
+    </visual>
+  <inertial>
+    <origin xyz="-7.74261e-05 4.4702e-05 1.98517e-20" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="2.35619 -1.5708 0.261799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_28" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_28"/>
+    <axis xyz="-0.866025 0.5 0"/>
+<origin xyz="7.58298e-18 2.03185e-18 0.025" rpy="2.46519e-32 -2.46519e-32 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#29 -->
+
+  <link name="passive_wheel_29">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_29_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="7.18553e-16 -1.25664 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_29_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="7.18553e-16 -1.25664 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_29_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="7.18553e-16 -1.25664 2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="-7.36366e-05 4.25141e-05 -2.76273e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="7.18553e-16 -1.25664 2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_29" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_29"/>
+    <axis xyz="-0.823639 0.475529 -0.309017"/>
+<origin xyz="-0.00669041 0.00386271 0.0237764" rpy="0 -0 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#30 -->
+
+  <link name="passive_wheel_30">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_30_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="5.66648e-16 -0.942478 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_30_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="5.66648e-16 -0.942478 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_30_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="5.66648e-16 -0.942478 2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="-6.2639e-05 3.61647e-05 -5.25503e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="5.66648e-16 -0.942478 2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_30" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_30"/>
+    <axis xyz="-0.700629 0.404509 -0.587785"/>
+<origin xyz="-0.0127259 0.00734731 0.0202254" rpy="2.77556e-17 -0 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#31 -->
+
+  <link name="passive_wheel_31">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_31_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -0.628318 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_31_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -0.628318 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_31_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -0.628318 2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="-4.55099e-05 2.62752e-05 -7.23293e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 -0.628318 2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_31" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_31"/>
+    <axis xyz="-0.509036 0.293893 -0.809017"/>
+<origin xyz="-0.0175157 0.0101127 0.0146946" rpy="0 5.55112e-17 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#32 -->
+
+  <link name="passive_wheel_32">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_32_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="-2.33471e-16 -0.314159 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_32_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="-2.33471e-16 -0.314159 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_32_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="-2.33471e-16 -0.314159 2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="-2.3926e-05 1.38137e-05 -8.50283e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="-2.33471e-16 -0.314159 2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_32" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_32"/>
+    <axis xyz="-0.267616 0.154509 -0.951057"/>
+<origin xyz="-0.020591 0.0118882 0.00772543" rpy="2.77556e-17 5.55112e-17 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#33 -->
+
+  <link name="passive_wheel_33">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_33_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -1.22465e-16 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_33_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -1.22465e-16 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_33_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -1.22465e-16 2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="-9.48198e-21 5.47443e-21 -8.9404e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 -1.22465e-16 2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_33" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_33"/>
+    <axis xyz="0 0 -1"/>
+<origin xyz="-0.0216506 0.0125 3.06163e-18" rpy="0 -1.2326e-32 5.55112e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#34 -->
+
+  <link name="passive_wheel_34">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_34_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.33472e-16 0.314159 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_34_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.33472e-16 0.314159 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_34_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.33472e-16 0.314159 2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="2.3926e-05 -1.38137e-05 -8.50283e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="2.33472e-16 0.314159 2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_34" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_34"/>
+    <axis xyz="0.267616 -0.154509 -0.951057"/>
+<origin xyz="-0.020591 0.0118882 -0.00772543" rpy="-2.77556e-17 -5.55112e-17 6.93889e-18"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#35 -->
+
+  <link name="passive_wheel_35">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_35_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.74463e-16 0.628318 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_35_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.74463e-16 0.628318 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_35_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.74463e-16 0.628318 2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="4.55099e-05 -2.62752e-05 -7.23293e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="2.74463e-16 0.628318 2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_35" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_35"/>
+    <axis xyz="0.509036 -0.293893 -0.809017"/>
+<origin xyz="-0.0175157 0.0101127 -0.0146946" rpy="0 -5.55112e-17 8.32667e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#36 -->
+
+  <link name="passive_wheel_36">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_36_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.77766e-16 0.942478 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_36_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.77766e-16 0.942478 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_36_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.77766e-16 0.942478 2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="6.2639e-05 -3.61647e-05 -5.25503e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.77766e-16 0.942478 2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_36" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_36"/>
+    <axis xyz="0.700629 -0.404509 -0.587785"/>
+<origin xyz="-0.0127259 0.00734731 -0.0202254" rpy="0 -5.55112e-17 1.66533e-16"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#37 -->
+
+  <link name="passive_wheel_37">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_37_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="1.07783e-15 1.25664 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_37_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="1.07783e-15 1.25664 2.61799"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_37_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="1.07783e-15 1.25664 2.61799"/>
+    </visual>
+  <inertial>
+    <origin xyz="7.36366e-05 -4.25141e-05 -2.76273e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="1.07783e-15 1.25664 2.61799"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_37" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_37"/>
+    <axis xyz="0.823639 -0.475529 -0.309017"/>
+<origin xyz="-0.00669041 0.00386271 -0.0237764" rpy="5.55112e-17 -0 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#38 -->
+
+  <link name="passive_wheel_38">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_38_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0.785398 1.5708 -2.87979"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_38_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0.785398 1.5708 -2.87979"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_38_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0.785398 1.5708 -2.87979"/>
+    </visual>
+  <inertial>
+    <origin xyz="7.74261e-05 -4.4702e-05 -1.98517e-20" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="0.785398 1.5708 -2.87979"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_38" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_38"/>
+    <axis xyz="0.866025 -0.5 0"/>
+<origin xyz="-7.58298e-18 -2.03185e-18 -0.025" rpy="2.46519e-32 -2.46519e-32 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#39 -->
+
+  <link name="passive_wheel_39">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_39_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 1.25664 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_39_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 1.25664 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_39_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 1.25664 -0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="7.36366e-05 -4.25141e-05 2.76273e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 1.25664 -0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_39" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_39"/>
+    <axis xyz="0.823639 -0.475529 0.309017"/>
+<origin xyz="0.00669041 -0.00386271 -0.0237764" rpy="-2.77556e-17 -5.55112e-17 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#40 -->
+
+  <link name="passive_wheel_40">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_40_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.942478 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_40_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.942478 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_40_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.942478 -0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="6.2639e-05 -3.61647e-05 5.25503e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 0.942478 -0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_40" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_40"/>
+    <axis xyz="0.700629 -0.404509 0.587785"/>
+<origin xyz="0.0127259 -0.00734731 -0.0202254" rpy="0 -5.55112e-17 1.11022e-16"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#41 -->
+
+  <link name="passive_wheel_41">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_41_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.628318 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_41_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.628318 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_41_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.628318 -0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="4.55099e-05 -2.62752e-05 7.23293e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 0.628318 -0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_41" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_41"/>
+    <axis xyz="0.509036 -0.293893 0.809017"/>
+<origin xyz="0.0175157 -0.0101127 -0.0146946" rpy="2.77556e-17 5.55112e-17 8.32667e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#42 -->
+
+  <link name="passive_wheel_42">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_42_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.314159 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_42_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.314159 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_42_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.314159 -0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="2.3926e-05 -1.38137e-05 8.50283e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 0.314159 -0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_42" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_42"/>
+    <axis xyz="0.267616 -0.154509 0.951057"/>
+<origin xyz="0.020591 -0.0118882 -0.00772543" rpy="2.77556e-17 -0 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#43 -->
+
+  <link name="passive_wheel_43">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_43_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 2.44929e-16 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_43_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 2.44929e-16 -0.523599"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_43_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 2.44929e-16 -0.523599"/>
+    </visual>
+  <inertial>
+    <origin xyz="3.88156e-20 2.34353e-20 8.9404e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 2.44929e-16 -0.523599"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_43" type="revolute">
+    <parent link="wheel_23"/>
+    <child link="passive_wheel_43"/>
+    <axis xyz="0 0 1"/>
+<origin xyz="0.0216506 -0.0125 -6.12322e-18" rpy="0 -0 5.55112e-17"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component wheel#44 -->
+
+  <link name="wheel_44">
+    <visual>
+      <geometry>
+        <mesh filename="package://9752dd362c426c5050c1cbe2739bfe27482e468d.stl"/>
+      </geometry>
+      <material name="wheel_wheel_44_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="1.5708 -0 1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="-0.000505521 2.36065e-19 -1.12248e-19" rpy="0 0 0"/>
+    <mass value="0.007245"/>
+    <inertia ixx="8.80591e-07"  ixy="0"  ixz="-2.77556e-25" iyy="8.80591e-07" iyz="-8.60423e-25" izz="1.73204e-06" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="1.5708 -0 1.5708"/>
+    <geometry>
+      <cylinder radius="0.0098" length="0.0048"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="wheel_44" type="revolute">
+    <parent link="robot_1"/>
+    <child link="wheel_44"/>
+    <axis xyz="-1 0 0"/>
+<origin xyz="-0.08 3.73579e-17 0" rpy="0 -0 0"/>
+    <limit effort="10" velocity="20" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#45 -->
+
+  <link name="passive_wheel_45">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_45_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.314159 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_45_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.314159 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_45_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.314159 1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="-3.17814e-20 -2.76273e-05 8.50283e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 -0.314159 1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_45" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_45"/>
+    <axis xyz="0 -0.309017 0.951057"/>
+<origin xyz="9.38758e-18 0.0237764 0.00772543" rpy="0 -0 -7.39557e-32"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#46 -->
+
+  <link name="passive_wheel_46">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_46_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.628318 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_46_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.628318 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_46_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.628318 1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="-6.04517e-20 -5.25503e-05 7.23293e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 -0.628318 1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_46" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_46"/>
+    <axis xyz="0 -0.587785 0.809017"/>
+<origin xyz="6.18188e-18 0.0202254 0.0146946" rpy="0 -9.86076e-32 -4.93038e-32"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#47 -->
+
+  <link name="passive_wheel_47">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_47_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.942478 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_47_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.942478 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_47_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -0.942478 1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="-5.53703e-20 -7.23293e-05 5.25503e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 -0.942478 1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_47" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_47"/>
+    <axis xyz="0 -0.809017 0.587785"/>
+<origin xyz="-4.04497e-19 0.0146946 0.0202254" rpy="0 -0 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#48 -->
+
+  <link name="passive_wheel_48">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_48_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -1.25664 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_48_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -1.25664 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_48_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 -1.25664 1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="-5.57663e-20 -8.50283e-05 2.76273e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 -1.25664 1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_48" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_48"/>
+    <axis xyz="0 -0.951057 0.309017"/>
+<origin xyz="-3.05964e-18 0.00772543 0.0237764" rpy="0 -0 -9.86076e-32"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#49 -->
+
+  <link name="passive_wheel_49">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_49_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.35619 -1.5708 2.35619"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_49_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.35619 -1.5708 2.35619"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_49_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.35619 -1.5708 2.35619"/>
+    </visual>
+  <inertial>
+    <origin xyz="-6.1601e-20 -8.9404e-05 1.98517e-20" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="2.35619 -1.5708 2.35619"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_49" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_49"/>
+    <axis xyz="0 -1 0"/>
+<origin xyz="-5.55113e-18 5.55113e-18 0.025" rpy="0 5.08181e-33 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#50 -->
+
+  <link name="passive_wheel_50">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_50_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="7.18553e-16 -1.25664 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_50_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="7.18553e-16 -1.25664 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_50_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="7.18553e-16 -1.25664 -1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="-4.34973e-20 -8.50283e-05 -2.76273e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="7.18553e-16 -1.25664 -1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_50" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_50"/>
+    <axis xyz="0 -0.951057 -0.309017"/>
+<origin xyz="-7.49923e-18 -0.00772543 0.0237764" rpy="0 -0 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#51 -->
+
+  <link name="passive_wheel_51">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_51_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="5.66648e-16 -0.942478 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_51_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="5.66648e-16 -0.942478 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_51_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="5.66648e-16 -0.942478 -1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="-3.20332e-20 -7.23293e-05 -5.25503e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="5.66648e-16 -0.942478 -1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_51" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_51"/>
+    <axis xyz="0 -0.809017 -0.587785"/>
+<origin xyz="-1.41285e-17 -0.0146946 0.0202254" rpy="0 -2.46519e-32 -4.93038e-32"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#52 -->
+
+  <link name="passive_wheel_52">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_52_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -0.628318 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_52_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -0.628318 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_52_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -0.628318 -1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="-2.8331e-20 -5.25503e-05 -7.23293e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 -0.628318 -1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_52" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_52"/>
+    <axis xyz="0 -0.587785 -0.809017"/>
+<origin xyz="-1.13198e-17 -0.0202254 0.0146946" rpy="0 -0 -2.46519e-32"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#53 -->
+
+  <link name="passive_wheel_53">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_53_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="-2.33471e-16 -0.314159 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_53_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="-2.33471e-16 -0.314159 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_53_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="-2.33471e-16 -0.314159 -1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="5.97885e-21 -2.76273e-05 -8.50283e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="-2.33471e-16 -0.314159 -1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_53" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_53"/>
+    <axis xyz="0 -0.309017 -0.951057"/>
+<origin xyz="-1.28184e-17 -0.0237764 0.00772543" rpy="0 -0 -4.93038e-32"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#54 -->
+
+  <link name="passive_wheel_54">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_54_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -1.22465e-16 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_54_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -1.22465e-16 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_54_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -1.22465e-16 -1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="-4.40796e-36 -1.09489e-20 -8.9404e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 -1.22465e-16 -1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_54" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_54"/>
+    <axis xyz="0 0 -1"/>
+<origin xyz="-1.16744e-17 -0.025 3.06163e-18" rpy="0 -0 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#55 -->
+
+  <link name="passive_wheel_55">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_55_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.33472e-16 0.314159 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_55_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.33472e-16 0.314159 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_55_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.33472e-16 0.314159 -1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="1.19297e-20 2.76273e-05 -8.50283e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="2.33472e-16 0.314159 -1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_55" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_55"/>
+    <axis xyz="0 0.309017 -0.951057"/>
+<origin xyz="-9.38758e-18 -0.0237764 -0.00772543" rpy="0 -4.93038e-32 -2.46519e-32"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#56 -->
+
+  <link name="passive_wheel_56">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_56_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.74463e-16 0.628318 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_56_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.74463e-16 0.628318 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_56_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="2.74463e-16 0.628318 -1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="2.07483e-20 5.25503e-05 -7.23293e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="2.74463e-16 0.628318 -1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_56" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_56"/>
+    <axis xyz="0 0.587785 -0.809017"/>
+<origin xyz="-7.56966e-18 -0.0202254 -0.0146946" rpy="0 -4.93038e-32 -4.93038e-32"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#57 -->
+
+  <link name="passive_wheel_57">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_57_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.77766e-16 0.942478 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_57_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.77766e-16 0.942478 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_57_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.77766e-16 0.942478 -1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="2.55927e-20 7.23293e-05 -5.25503e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.77766e-16 0.942478 -1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_57" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_57"/>
+    <axis xyz="0 0.809017 -0.587785"/>
+<origin xyz="-2.37105e-18 -0.0146946 -0.0202254" rpy="0 -0 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#58 -->
+
+  <link name="passive_wheel_58">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_58_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="1.07783e-15 1.25664 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_58_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="1.07783e-15 1.25664 -1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_58_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="1.07783e-15 1.25664 -1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="1.6063e-20 8.50283e-05 -2.76273e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="1.07783e-15 1.25664 -1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_58" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_58"/>
+    <axis xyz="0 0.951057 -0.309017"/>
+<origin xyz="1.67186e-18 -0.00772543 -0.0237764" rpy="0 -0 4.93038e-32"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#59 -->
+
+  <link name="passive_wheel_59">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_59_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0.785398 1.5708 -0.785398"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_59_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0.785398 1.5708 -0.785398"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_59_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0.785398 1.5708 -0.785398"/>
+    </visual>
+  <inertial>
+    <origin xyz="2.18976e-20 8.9404e-05 -1.98517e-20" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="0.785398 1.5708 -0.785398"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_59" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_59"/>
+    <axis xyz="0 1 0"/>
+<origin xyz="5.55113e-18 -5.55113e-18 -0.025" rpy="0 5.08145e-33 0"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#60 -->
+
+  <link name="passive_wheel_60">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_60_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 1.25664 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_60_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 1.25664 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_60_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 1.25664 1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="1.37198e-20 8.50283e-05 2.76273e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 1.25664 1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_60" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_60"/>
+    <axis xyz="0 0.951057 0.309017"/>
+<origin xyz="8.88701e-18 0.00772543 -0.0237764" rpy="0 -1.2326e-32 -4.93038e-32"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#61 -->
+
+  <link name="passive_wheel_61">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_61_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.942478 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_61_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.942478 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_61_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.942478 1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="1.21816e-20 7.23293e-05 5.25503e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 0.942478 1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_61" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_61"/>
+    <axis xyz="0 0.809017 0.587785"/>
+<origin xyz="9.96518e-18 0.0146946 -0.0202254" rpy="0 -2.46519e-32 -7.39557e-32"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#62 -->
+
+  <link name="passive_wheel_62">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_62_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.628318 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_62_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.628318 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_62_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.628318 1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="-1.13724e-20 5.25503e-05 7.23293e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 0.628318 1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_62" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_62"/>
+    <axis xyz="0 0.587785 0.809017"/>
+<origin xyz="1.27076e-17 0.0202254 -0.0146946" rpy="0 -1.84889e-32 -7.39557e-32"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#63 -->
+
+  <link name="passive_wheel_63">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_63_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.314159 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_63_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.314159 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_63_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 0.314159 1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="-2.58306e-20 2.76273e-05 8.50283e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 0.314159 1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_63" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_63"/>
+    <axis xyz="0 0.309017 0.951057"/>
+<origin xyz="1.28184e-17 0.0237764 -0.00772543" rpy="0 4.93038e-32 -1.2326e-32"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+
+  <!-- Component passive_wheel#64 -->
+
+  <link name="passive_wheel_64">
+    <visual>
+      <geometry>
+        <mesh filename="package://8f880ae7e416dc54b03055cc53d5bac2f5e43b67.stl"/>
+      </geometry>
+      <material name="passive_wheel_passive_wheel_64_0_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 2.44929e-16 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://7b77bc2b5afe39a3f95ea2e3fa1e23df1a22744d.stl"/>
+      </geometry>
+      <material name="passive_wheel_rubber_64_1_material">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 2.44929e-16 1.5708"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://b041a26bdd1a2898ad455be57d30e707e35b9f33.stl"/>
+      </geometry>
+      <material name="passive_wheel_bearing_64_2_material">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    <origin xyz="0 0 0" rpy="3.14159 2.44929e-16 1.5708"/>
+    </visual>
+  <inertial>
+    <origin xyz="-3.97034e-20 2.18976e-20 8.9404e-05" rpy="0 0 0"/>
+    <mass value="0.000755"/>
+    <inertia ixx="1.01415e-08"  ixy="0"  ixz="0" iyy="1.01415e-08" iyz="2.77556e-26" izz="1.86175e-08" />
+  </inertial>
+  <collision>
+    <origin xyz="0 0 0" rpy="3.14159 2.44929e-16 1.5708"/>
+    <geometry>
+      <cylinder radius="0.0073" length="0.0018"/>
+    </geometry>
+  </collision>
+  </link>
+  <joint name="passive_wheel_64" type="revolute">
+    <parent link="wheel_44"/>
+    <child link="passive_wheel_64"/>
+    <axis xyz="0 0 1"/>
+<origin xyz="1.16744e-17 0.025 -6.12322e-18" rpy="0 -0 -1.01629e-32"/>
+    <limit effort="0.5" velocity="12.5664" />
+    <joint_properties friction="0.0"/>
+  </joint>
+</robot>

@@ -1,0 +1,21 @@
+<robot name="metabot">
+
+  <!-- Component obstacle#1 -->
+
+  <link name="obstacle_1">
+    <visual>
+      <geometry>
+        <mesh filename="package://5f580d81287f5b57f04d00c8173083d076836d3e.stl"/>
+      </geometry>
+      <material name="obstacle_obstacle_1_0_material">
+        <color rgba="0.3 1.0 0.8 0.5"/>
+      </material>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    </visual>
+  <inertial>
+    <origin xyz="0 0 0.025" rpy="0 0 0"/>
+    <mass value="0.0"/>
+    <inertia ixx="0.00039514"  ixy="0"  ixz="0" iyy="0.00039514" iyz="0" izz="0.000589839" />
+  </inertial>
+  </link>
+</robot>
