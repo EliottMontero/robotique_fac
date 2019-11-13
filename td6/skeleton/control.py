@@ -102,7 +102,44 @@ class RRRRobot(RobotModel):
         pass
 
     def computeMGD(self, joints):
-        return [1,0,0]
+        L1 = 0.41
+        L2 = 0.3
+        L3 = 0.3
+        H = 1.01
+        R1 = np.array([\
+            [math.cos(-joints[0]), math.sin(-joints[0]), 0, 0],\
+            [-math.sin(-joints[0]), math.cos(-joints[0]), 0, 0],\
+            [0, 0, 1, 0],\
+            [0, 0, 0, 1]])
+        R2 = np.array([\
+            [1, 0 , 0, 0],\
+            [0, math.cos(-joints[1]), math.sin(-joints[1]), 0],\
+            [0, -math.sin(-joints[1]), math.cos(-joints[1]), 0],\
+            [0, 0, 0, 1]])
+        R3 = np.array([\
+            [1, 0 , 0, 0],\
+            [0, math.cos(-joints[2]), math.sin(-joints[2]), 0],\
+            [0, -math.sin(-joints[2]), math.cos(-joints[2]), 0],\
+            [0, 0, 0, 1]])
+        D1 = np.array([\
+            [1, 0, 0, 0],\
+            [0, 1, 0, L1],\
+            [0, 0, 1, 0],\
+            [0, 0, 0, 1]])
+        D2 = np.array([\
+            [1, 0, 0, 0],\
+            [0, 1, 0, L2],\
+            [0, 0, 1, 0],\
+            [0, 0, 0, 1]])
+        D3 = np.array([\
+            [1, 0, 0, 0],\
+            [0, 1, 0, L3],\
+            [0, 0, 1, 0],\
+            [0, 0, 0, 1]])
+
+        T = R1.dot(D1).dot(R2).dot(D2).dot(R3).dot(D3)
+        result = np.array([T[0][3], T[1][3], T[2][3]+H])
+        return result
 
     def computeAnalyticalMGI(self, operational_target):
         raise RuntimeError("Not implemented")
