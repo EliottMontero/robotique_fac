@@ -186,7 +186,16 @@ class RRRRobot(RobotModel):
         return result
 
     def computeAnalyticalMGI(self, operational_target):
-        raise RunTimeError("Not implemented")
+        L1 = 0.4
+        # dist = math.sqrt((operational_target[0])**2 + (operational_target[1])**2 + operational_target[2]**2)
+        # max_dist = math.sqrt((0.45)**2 + (0.25)**2)
+        # min_dist = math.sqrt((0.2)**2 + (0.25)**2)
+        # if dist < min_dist or dist > max_dist:
+        #     return None, 0
+        dYaw = -math.atan2(operational_target[0], operational_target[1])
+        dist = math.sqrt((operational_target[0])**2 + (operational_target[1])**2)
+        dYaw2 = math.atan2(operational_target[2], dist)
+        return [dYaw, dYaw2, 0], 1
 
     def computeJacobian(self, joints):
         L1 = 0.4
