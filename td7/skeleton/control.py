@@ -38,7 +38,59 @@ class LegModel:
         np.array
             The coordinate of the effector in the operational space
         """
-        return np.array([0,0,0,0])
+        H = 1.01
+        L1 = 0.4
+        L2 = 0.3
+        L3 = 0.3
+        L4 = 0.2
+        D0 = np.array([\
+            [1, 0, 0, 0],\
+            [0, 1, 0, 0],\
+            [0, 0, 1, H],\
+            [0, 0, 0, 1]])
+        R1 = np.array([\
+            [math.cos(-joints[0]), math.sin(-joints[0]), 0, 0],\
+            [-math.sin(-joints[0]), math.cos(-joints[0]), 0, 0],\
+            [0, 0, 1, 0],\
+            [0, 0, 0, 1]])
+        R2 = np.array([\
+            [1, 0 , 0, 0],\
+            [0, math.cos(-joints[1]), math.sin(-joints[1]), 0],\
+            [0, -math.sin(-joints[1]), math.cos(-joints[1]), 0],\
+            [0, 0, 0, 1]])
+        R3 = np.array([\
+            [1, 0 , 0, 0],\
+            [0, math.cos(-joints[2]), math.sin(-joints[2]), 0],\
+            [0, -math.sin(-joints[2]), math.cos(-joints[2]), 0],\
+            [0, 0, 0, 1]])
+        R4 = np.array([\
+            [1, 0 , 0, 0],\
+            [0, math.cos(-joints[3]), math.sin(-joints[3]), 0],\
+            [0, -math.sin(-joints[3]), math.cos(-joints[3]), 0],\
+            [0, 0, 0, 1]])
+        D1 = np.array([\
+            [1, 0, 0, 0],\
+            [0, 1, 0, L1],\
+            [0, 0, 1, 0],\
+            [0, 0, 0, 1]])
+        D2 = np.array([\
+            [1, 0, 0, 0],\
+            [0, 1, 0, L2],\
+            [0, 0, 1, 0],\
+            [0, 0, 0, 1]])
+        D3 = np.array([\
+            [1, 0, 0, 0],\
+            [0, 1, 0, L3],\
+            [0, 0, 1, 0],\
+            [0, 0, 0, 1]])
+        D4 = np.array([\
+            [1, 0, 0, 0.02],\
+            [0, 1, 0, L4],\
+            [0, 0, 1, 0],\
+            [0, 0, 0, 1]])
+
+        T = D0.dot(R1).dot(D1).dot(R2).dot(D2).dot(R3).dot(D3).dot(R4).dot(D4)
+        return np.array([T[0][3],T[1][3],T[2][3],T[3][3]])
 
     def computeAnalyticalMGI(self, operational_target):
         """
@@ -86,7 +138,10 @@ def searchJacInv(model, joints, target, depth= 0, max_depth= 10, max_eps = 0.1):
     np.array
         The wished position for joints in order to reach the target
     """
-    raise RuntimeError("Not implemented")
+    inv_jacobian = np.linalg.inv(model.computeJacobian(joints))
+    G = model.computeMGD(joints)
+    result = inv_jacobian.dot(target-G)
+    return result+joints
 
 def searchJacTransposed(model, joints, target):
     """
@@ -104,7 +159,11 @@ def searchJacTransposed(model, joints, target):
     np.array
         The wished position for joints in order to reach the target
     """
-    raise RuntimeError("Not implemented")
+    t_jacobian = model.computeJacobian(joints).transpose()
+    G = model.computeMGD(joints)
+    result = t_jacobian.dot(target-G)
+    #je n'ai pas fait *-2 car ça faussait le résultat alors que ça marche comme ça
+    return result+joints
 
 class Trajectory(ABC):
 
