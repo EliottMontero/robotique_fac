@@ -106,6 +106,57 @@ class LegModel:
         int
             The number of solutions
         """
+
+        H = 1.01
+        L1 = 0.4
+        L2 = 0.3
+        L3 = 0.3
+        L4 = 0.2
+        L3 += L4
+
+        dYaw = -math.atan2(operational_target[0], operational_target[1])
+
+        R1 = np.array([\
+            [math.cos(dYaw), math.sin(dYaw), 0, 0],\
+            [-math.sin(dYaw), math.cos(dYaw), 0, 0],\
+            [0, 0, 1, 0],\
+            [0, 0, 0, 1]])
+
+
+        p = np.array([math.cos(-dYaw)*L1, math.sin(-dYaw)*L1, 1.01])
+
+        t = np.array([\
+        [operational_target[0]],\
+        [operational_target[1]],\
+        [operational_target[2]],\
+        [0]])
+        t1 = np.array([\
+        [p[0]],\
+        [p[1]],\
+        [p[2]],\
+        [0]])
+
+        r_target = R1.dot(t)
+        r_p = R1.dot(t1)
+        r_target = r_target - r_p
+        D =  math.sqrt((r_target[1])**2 + (r_target[2])**2)
+
+        fi = math.atan2(r_target[2], r_target[1])
+        x = (L2**2 + D**2 -L3**2) / (2*L2*D)
+        if x < 1 and x > -1:
+            alpha = math.acos( (L2**2 + D**2 -L3**2) / (2*L2*D))
+            beta = math.acos( (L2**2 - D**2 +L3**2) / (2*L2*L3))
+            q1 = dYaw
+            q21 = fi-alpha
+            q22 = fi+alpha
+            q31 = math.pi-beta
+            q32 = beta - math.pi
+
+
+            return [q1,q22,q32,0], 2
+
+
+
         return None, 0
 
     def computeJacobian(self, joints):
