@@ -90,7 +90,7 @@ class LegModel:
             [0, 0, 0, 1]])
 
         T = D0.dot(R1).dot(D1).dot(R2).dot(D2).dot(R3).dot(D3).dot(R4).dot(D4)
-        return np.array([T[0][3],T[1][3],T[2][3],T[3][3]])
+        return np.array([T[0][3],T[1][3],T[2][3],T[2][1]])
 
     def computeAnalyticalMGI(self, operational_target):
         """
@@ -171,9 +171,94 @@ class LegModel:
         np.array
             The jacobian of the robot
         """
-        raise RuntimeError("Not implemented")
+        H = 1.01
+        L1 = 0.4
+        L2 = 0.3
+        L3 = 0.3
+        L4 = 0.2
+        D0 = np.array([\
+            [1, 0, 0, 0],\
+            [0, 1, 0, 0],\
+            [0, 0, 1, H],\
+            [0, 0, 0, 1]])
+        R1 = np.array([\
+            [math.cos(-joints[0]), math.sin(-joints[0]), 0, 0],\
+            [-math.sin(-joints[0]), math.cos(-joints[0]), 0, 0],\
+            [0, 0, 1, 0],\
+            [0, 0, 0, 1]])
+        R1dv = np.array([\
+            [math.sin(-joints[0]), -math.cos(-joints[0]), 0, 0],\
+            [math.cos(-joints[0]), math.sin(-joints[0]), 0, 0],\
+            [0, 0, 0, 0],\
+            [0, 0, 0, 0]])
+        R2 = np.array([\
+            [1, 0 , 0, 0],\
+            [0, math.cos(-joints[1]), math.sin(-joints[1]), 0],\
+            [0, -math.sin(-joints[1]), math.cos(-joints[1]), 0],\
+            [0, 0, 0, 1]])
+        R2dv = np.array([\
+            [0, 0 , 0, 0],\
+            [0, math.sin(-joints[1]), -math.cos(-joints[1]), 0],\
+            [0, math.cos(-joints[1]), math.sin(-joints[1]), 0],\
+            [0, 0, 0, 0]])
+        R3 = np.array([\
+            [1, 0 , 0, 0],\
+            [0, math.cos(-joints[2]), math.sin(-joints[2]), 0],\
+            [0, -math.sin(-joints[2]), math.cos(-joints[2]), 0],\
+            [0, 0, 0, 1]])
+        R3dv = np.array([\
+            [0, 0 , 0, 0],\
+            [0, math.sin(-joints[2]), -math.cos(-joints[2]), 0],\
+            [0, math.cos(-joints[2]), math.sin(-joints[2]), 0],\
+            [0, 0, 0, 0]])
+        R4 = np.array([\
+            [1, 0 , 0, 0],\
+            [0, math.cos(-joints[3]), math.sin(-joints[3]), 0],\
+            [0, -math.sin(-joints[3]), math.cos(-joints[3]), 0],\
+            [0, 0, 0, 1]])
+        R4dv = np.array([\
+            [0, 0 , 0, 0],\
+            [0, math.sin(-joints[3]), -math.cos(-joints[3]), 0],\
+            [0, math.cos(-joints[3]), math.sin(-joints[3]), 0],\
+            [0, 0, 0, 0]])
+        D1 = np.array([\
+            [1, 0, 0, 0],\
+            [0, 1, 0, L1],\
+            [0, 0, 1, 0],\
+            [0, 0, 0, 1]])
+        D2 = np.array([\
+            [1, 0, 0, 0],\
+            [0, 1, 0, L2],\
+            [0, 0, 1, 0],\
+            [0, 0, 0, 1]])
+        D3 = np.array([\
+            [1, 0, 0, 0],\
+            [0, 1, 0, L3],\
+            [0, 0, 1, 0],\
+            [0, 0, 0, 1]])
+        D4 = np.array([\
+            [1, 0, 0, 0.02],\
+            [0, 1, 0, L4],\
+            [0, 0, 1, 0],\
+            [0, 0, 0, 1]])
 
-def searchJacInv(model, joints, target, depth= 0, max_depth= 10, max_eps = 0.1):
+        T1 = D0.dot(R1dv).dot(D1).dot(R2).dot(D2).dot(R3).dot(D3).dot(R4).dot(D4)
+        T2 = D0.dot(R1).dot(D1).dot(R2dv).dot(D2).dot(R3).dot(D3).dot(R4).dot(D4)
+        T3 = D0.dot(R1).dot(D1).dot(R2).dot(D2).dot(R3dv).dot(D3).dot(R4).dot(D4)
+        T4 = D0.dot(R1).dot(D1).dot(R2).dot(D2).dot(R3).dot(D3).dot(R4dv).dot(D4)
+
+
+        jacobian = np.array([[T1[0][3], T2[0][3], T3[0][3], T4[0][3]],\
+        [T1[1][3], T2[1][3], T3[1][3], T4[1][3]],\
+        [T1[2][3], T2[2][3], T3[2][3], T4[2][3]],\
+        [T1[2][1], T2[2][1], T3[2][1], T4[2][1]]])
+
+
+        return jacobian
+
+
+
+def searchJacInv(model, joints, target, depth= 0, max_depth= 100, max_eps = 0.1):
     """
     Parameters
     ----------
@@ -183,16 +268,44 @@ def searchJacInv(model, joints, target, depth= 0, max_depth= 10, max_eps = 0.1):
         Initial position of the joints
     target : np.array
         The target in operational space
+    depth : int
+        The number of steps in the recursive call
+    max_depth : int
+        The maximal number of steps allowed
+    epsilon : float
+        The maximal size of a step
 
     Returns
     -------
     np.array
         The wished position for joints in order to reach the target
     """
-    inv_jacobian = np.linalg.inv(model.computeJacobian(joints))
-    G = model.computeMGD(joints)
-    result = inv_jacobian.dot(target-G)
-    return result+joints
+    actual_target = model.computeMGD(joints)
+    if np.allclose(target, actual_target) or depth >= max_depth:
+        return joints
+    J = model.computeJacobian(joints)
+    new_joints = None
+    try:
+        epsilon = np.linalg.inv(J).dot(target - model.computeMGD(joints))
+        eps_norm = np.linalg.norm(epsilon)
+        if eps_norm > max_eps:
+            epsilon = epsilon * max_eps / eps_norm
+        new_joints = joints + epsilon
+    except np.linalg.LinAlgError as e:
+        noise = 2 * (np.random.rand(len(joints)) - 0.5) * max_eps
+        print("Singular matrix, adding noise: {:}".format(noise))
+        new_joints = joints + noise
+    return searchJacInv(model,new_joints, target, depth+1, max_depth, max_eps)
+
+def getCost(joints, model, target):
+    pos = model.computeMGD(joints)
+    err = target - pos
+    return err.transpose().dot(err)
+
+def getJacobianCost(joints, model, target):
+    J = model.computeJacobian(joints)
+    current = model.computeMGD(joints)
+    return -2 * J.transpose().dot(target - current)
 
 def searchJacTransposed(model, joints, target):
     """
@@ -210,11 +323,9 @@ def searchJacTransposed(model, joints, target):
     np.array
         The wished position for joints in order to reach the target
     """
-    t_jacobian = model.computeJacobian(joints).transpose()
-    G = model.computeMGD(joints)
-    result = t_jacobian.dot(target-G)
-    #je n'ai pas fait *-2 car ça faussait le résultat alors que ça marche comme ça
-    return result+joints
+    optimizationResult = minimize(getCost, joints, (model, target),
+                                  jac=getJacobianCost)
+    return optimizationResult.x
 
 class Trajectory(ABC):
 
