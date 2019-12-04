@@ -8,8 +8,8 @@ from homogeneous_transform import *
 
 defaultParameters = {
     "restX" : 0.0,
-    "restY" : 0.1,
-    "restZ" : -0.2,
+    "restY" : 0.17,
+    "restZ" : -0.07,
     "flyingRatio" : 0.25,
     "stepHeight" : 0.02
 }
