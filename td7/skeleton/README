@@ -1,0 +1,25 @@
+### FICHIER README POUR TD 7 : CONTROLE D'UNE PATTE A 4 DEGRES DE LIBERTES ###
+### ELIOTT MONTERO ###########################################################
+### 2 DECEMBRE 2019 ##########################################################
+
+Tout fonctionne sauf l'analyticalMGI que je n'ai pas réussi à faire marcher.
+
+## TRAJECTOIRES ##
+
+Après avoir essayé le step en linéaire et en cubique, on se rend compte que dans
+les deux cas, la trajectoire est mieux en utilisant la méthode de la jacobienne 
+transposée car en utilisant la jacobienne inverse on peut avoir des problèmes de profondeur
+et les joints ne se mettent pas dans des positions optimales alors qu'avec la 
+transposée si. Quand à la trajectoire, la trajectoire cubique permet d'avoir une plus grande
+précision sur le mouvement et de contrôler l'accélération, ce que ne fait pas la trajectoire 
+linéaire, ce qui la rend plus réaliste même si c'est plus complexe.
+
+C'est pourquoi la trajectoire qui me semble la plus adaptée pour la marche d'un robot quadrupède
+serait un step de Patte avant droit (resp. gauche) en même temps qu'un step de Patte arrière gauche
+(resp. droit) en suivant une spline cubique avec le modèle de jacobienne transposée (pour toujours
+avoir un appui de chaque côté lors de la marche.
+
+### EXTENSIONS ###
+
+J'ai rajouté une trajectoire (linear_test.json) qui permet de tester la plupart des mouvements 
+de chaques joints pour tester mes modèles en toutes circonstances
