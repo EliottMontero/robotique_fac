@@ -12,7 +12,7 @@
 <mesh filename="package://body.stl"/>
 </geometry>
 <material name="body_1_0_body_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -20,7 +20,7 @@
 <mesh filename="package://body.stl"/>
 </geometry>
 <material name="body_1_0_body_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -72,7 +72,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="body_1_2_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -80,7 +80,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="body_1_2_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -102,7 +102,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="body_1_3_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -110,7 +110,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="body_1_3_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -192,7 +192,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="body_1_6_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -200,7 +200,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="body_1_6_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -222,7 +222,7 @@
 <mesh filename="package://body.stl"/>
 </geometry>
 <material name="body_1_7_body_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -230,7 +230,7 @@
 <mesh filename="package://body.stl"/>
 </geometry>
 <material name="body_1_7_body_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -252,7 +252,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="body_1_8_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -260,7 +260,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="body_1_8_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -319,7 +319,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_1_0_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -327,7 +327,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_1_0_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -349,7 +349,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_1_1_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -357,7 +357,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_1_1_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -446,7 +446,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_1_2_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -454,7 +454,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_1_2_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -476,7 +476,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_1_3_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -484,7 +484,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_1_3_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -506,7 +506,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_1_4_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -514,7 +514,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_1_4_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -536,7 +536,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_1_5_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -544,7 +544,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_1_5_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -603,7 +603,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="hornside_1_1_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -611,7 +611,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="hornside_1_1_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -633,7 +633,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_1_2_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -641,7 +641,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_1_2_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -663,7 +663,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_1_3_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -671,7 +671,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_1_3_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -700,7 +700,7 @@
 <mesh filename="package://leg.stl"/>
 </geometry>
 <material name="leg_1_0_leg_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -708,7 +708,7 @@
 <mesh filename="package://leg.stl"/>
 </geometry>
 <material name="leg_1_0_leg_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -773,7 +773,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_2_0_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -781,7 +781,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_2_0_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -803,7 +803,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_2_1_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -811,7 +811,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_2_1_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -840,7 +840,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_2_0_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -848,7 +848,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_2_0_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -870,7 +870,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_2_1_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -878,7 +878,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_2_1_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -960,7 +960,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_2_4_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -968,7 +968,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_2_4_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -990,7 +990,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_2_5_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -998,7 +998,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_2_5_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1027,7 +1027,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_2_0_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1035,7 +1035,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_2_0_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1057,7 +1057,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_2_1_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1065,7 +1065,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_2_1_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1087,7 +1087,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="hornside_2_2_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1095,7 +1095,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="hornside_2_2_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1154,7 +1154,7 @@
 <mesh filename="package://leg.stl"/>
 </geometry>
 <material name="leg_2_0_leg_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1162,7 +1162,7 @@
 <mesh filename="package://leg.stl"/>
 </geometry>
 <material name="leg_2_0_leg_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1227,7 +1227,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_3_0_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1235,7 +1235,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_3_0_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1257,7 +1257,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_3_1_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1265,7 +1265,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_3_1_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1294,7 +1294,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_3_0_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1302,7 +1302,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_3_0_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1324,7 +1324,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_3_1_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1332,7 +1332,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_3_1_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1354,7 +1354,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_3_2_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1362,7 +1362,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_3_2_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1414,7 +1414,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_3_4_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1422,7 +1422,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_3_4_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1481,7 +1481,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_3_0_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1489,7 +1489,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_3_0_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1511,7 +1511,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="hornside_3_1_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1519,7 +1519,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="hornside_3_1_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1541,7 +1541,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_3_2_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1549,7 +1549,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_3_2_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1608,7 +1608,7 @@
 <mesh filename="package://leg.stl"/>
 </geometry>
 <material name="leg_3_0_leg_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1616,7 +1616,7 @@
 <mesh filename="package://leg.stl"/>
 </geometry>
 <material name="leg_3_0_leg_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1681,7 +1681,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_4_0_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1689,7 +1689,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_4_0_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1711,7 +1711,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_4_1_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1719,7 +1719,7 @@
 <mesh filename="package://u.stl"/>
 </geometry>
 <material name="doubleu_4_1_u_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1748,7 +1748,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_4_0_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1756,7 +1756,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_4_0_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1778,7 +1778,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_4_1_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1786,7 +1786,7 @@
 <mesh filename="package://plate.stl"/>
 </geometry>
 <material name="platesblock_4_1_plate_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1868,7 +1868,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_4_4_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1876,7 +1876,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_4_4_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1898,7 +1898,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_4_5_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1906,7 +1906,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="platesblock_4_5_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1935,7 +1935,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_4_0_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1943,7 +1943,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_4_0_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -1965,7 +1965,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_4_1_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -1973,7 +1973,7 @@
 <mesh filename="package://horntobottom.stl"/>
 </geometry>
 <material name="hornside_4_1_horntobottom_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -2025,7 +2025,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="hornside_4_3_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </visual>
 <collision>
@@ -2033,7 +2033,7 @@
 <mesh filename="package://motor.stl"/>
 </geometry>
 <material name="hornside_4_3_motor_material">
-<color rgba="0.470588 0.470588 0.470588 1.0"/>
+<color rgba="0.9 0.1 0.2 1.0"/>
 </material>
 </collision>
 <inertial>
@@ -2062,7 +2062,7 @@
 <mesh filename="package://leg.stl"/>
 </geometry>
 <material name="leg_4_0_leg_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </visual>
 <collision>
@@ -2070,7 +2070,7 @@
 <mesh filename="package://leg.stl"/>
 </geometry>
 <material name="leg_4_0_leg_material">
-<color rgba="0.972549 0.529412 0.00392157 1.0"/>
+<color rgba="0 0.8 1.0 1.0"/>
 </material>
 </collision>
 <inertial>
