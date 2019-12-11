@@ -6,4 +6,5 @@
 -> Il est difficile de seulement modifier la spline de marche pour avoir une
 rotation autour de lui même car elle est appelée de la même manière par chaque
 patte une à une, et il est difficile d'avoir une rotation sur lui même quand
-toutes les pattes ont le même comportement.
+toutes les pattes ont le même comportement, car pour une rotation il faut un
+mouvement inverse entre les deux paires de pattes.
