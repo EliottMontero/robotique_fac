@@ -267,8 +267,10 @@ class ParametricWalkEngine(WalkEngine):
         self.flyingRatio = parameters["flyingRatio"]
 
     def getLegHeight(self, affix):
-        if( affix < self.flyingRatio and affix > 0):
-            return self.stepHeight * (affix/self.flyingRatio)
+        if( affix < (self.flyingRatio/2) and affix > 0):
+            return self.stepHeight * ((affix*2)/self.flyingRatio)
+        elif(affix < self.flyingRatio and affix > (self.flyingRatio/2)):
+            return self.stepHeight -self.stepHeight * ((affix-self.flyingRatio/2)/self.flyingRatio)
         return 0
 
     def getLegX(self, affix):
