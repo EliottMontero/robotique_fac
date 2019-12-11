@@ -8,8 +8,8 @@ from homogeneous_transform import *
 
 defaultParameters = {
     "restX" : 0.0,
-    "restY" : 0.17,
-    "restZ" : -0.07,
+    "restY" : 0.19,
+    "restZ" : -0.08,
     "flyingRatio" : 0.25,
     "stepHeight" : 0.02
 }
@@ -267,7 +267,32 @@ class ParametricWalkEngine(WalkEngine):
         self.flyingRatio = parameters["flyingRatio"]
 
     def getLegHeight(self, affix):
-        raise RuntimeError("Not implemented")
+        if( affix < self.flyingRatio and affix > 0):
+            return self.stepHeight * (affix/self.flyingRatio)
+        return 0
+
+    def getLegX(self, affix):
+        if( affix < self.flyingRatio):
+            return self.stepX * (affix/self.flyingRatio)
+        if( affix >= self.flyingRatio):
+            return self.stepX - ((2*self.stepX) * (affix-self.flyingRatio) * (1/(1-self.flyingRatio)))
+        return 0
+
+    def getLegY(self, affix):
+        if( affix < self.flyingRatio and affix > 0):
+            return self.stepY * (affix/self.flyingRatio)
+        if( affix >= self.flyingRatio):
+            return self.stepY - ((2*self.stepY) * (affix-self.flyingRatio) * (1/(1-self.flyingRatio)))
+        return 0
+
+    def getLegDir(self, affix):
+        rotStep = self.stepDir/(math.pi*10) #pi*10 = ratio pour que ça ne parte pas trop vite
+        if( affix < self.flyingRatio and affix > 0):
+            return rotStep * (affix/self.flyingRatio)
+        if( affix >= self.flyingRatio):
+            return rotStep - ((2*rotStep) * (affix-self.flyingRatio) * (1/(1-self.flyingRatio)))
+        return 0
+
 
 class LegLifter(ParametricWalkEngine):
     """
@@ -285,15 +310,63 @@ class LegLifter(ParametricWalkEngine):
 
 class CartesianWalkEngine(ParametricWalkEngine):
     def getLegTargets(self, t):
-        raise RuntimeError("Not implemented")
+        leg_targets = np.zeros((3,4))
+        for i in range(4):
+            leg_affix = self.getLegAffix(t, i)
+            height = self.getLegHeight(leg_affix)
+            nextX = self.getLegX(leg_affix)
+            nextY = self.getLegY(leg_affix)
+            wished_pos = self.robot_model.trunk_from_leg[i].dot(np.concatenate((self.restingPose,[1])))
+            wished_pos[0] += nextX
+            wished_pos[1] += nextY
+            wished_pos[2] += height
+            leg_targets[:,i] = wished_pos[:3]
+        return leg_targets
 
 class RotationWalkEngine(ParametricWalkEngine):
     def getLegTargets(self, t):
-        raise RuntimeError("Not implemented")
+        leg_targets = np.zeros((3,4))
+        for i in range(4):
+            leg_affix = self.getLegAffix(t, i)
+            height = self.getLegHeight(leg_affix)
+            nextDir = self.getLegDir(leg_affix)
+            wished_pos = self.robot_model.trunk_from_leg[i].dot(np.concatenate((self.restingPose,[1])))
+            if i == 0:
+                wished_pos[0] += nextDir
+            if i == 1:
+                wished_pos[0] += nextDir
+            if i == 2:
+                wished_pos[0] -= nextDir
+            if i == 3:
+                wished_pos[0] -= nextDir
+            wished_pos[2] += height
+            leg_targets[:,i] = wished_pos[:3]
+        return leg_targets
 
 class OmniDirectionalWalkEngine(ParametricWalkEngine):
     def getLegTargets(self, t):
-        raise RuntimeError("Function not implemented")
+        leg_targets = np.zeros((3,4))
+        for i in range(4):
+            leg_affix = self.getLegAffix(t, i)
+            height = self.getLegHeight(leg_affix)
+            nextX = self.getLegX(leg_affix)
+            nextY = self.getLegY(leg_affix)
+            nextDir = self.getLegDir(leg_affix)
+            wished_pos = self.robot_model.trunk_from_leg[i].dot(np.concatenate((self.restingPose,[1])))
+            if i == 0:
+                wished_pos[0] += nextDir
+            if i == 1:
+                wished_pos[0] += nextDir
+            if i == 2:
+                wished_pos[0] -= nextDir
+            if i == 3:
+                wished_pos[0] -= nextDir
+            wished_pos[0] += nextX
+            wished_pos[1] += nextY
+            wished_pos[2] += height
+            leg_targets[:,i] = wished_pos[:3]
+        return leg_targets
+
 
 class Trajectory(ABC):
 
