@@ -288,7 +288,7 @@ class ParametricWalkEngine(WalkEngine):
         return 0
 
     def getLegDir(self, affix):
-        rotStep = self.stepDir/(math.pi*10) #pi*10 = ratio pour que ça ne parte pas trop vite
+        rotStep = self.stepDir
         if( affix < self.flyingRatio and affix > 0):
             return rotStep * (affix/self.flyingRatio)
         if( affix >= self.flyingRatio):
@@ -333,15 +333,25 @@ class RotationWalkEngine(ParametricWalkEngine):
             height = self.getLegHeight(leg_affix)
             nextDir = self.getLegDir(leg_affix)
             wished_pos = self.robot_model.trunk_from_leg[i].dot(np.concatenate((self.restingPose,[1])))
-            if i == 0:
-                wished_pos[0] += nextDir
-            if i == 1:
-                wished_pos[0] += nextDir
-            if i == 2:
-                wished_pos[0] -= nextDir
-            if i == 3:
-                wished_pos[0] -= nextDir
+
+            matRotZ = np.array([\
+            [math.cos(nextDir), math.sin(nextDir), 0, 0],\
+            [-math.sin(nextDir), math.cos(nextDir), 0, 0],\
+            [0,0,1,0],\
+            [0,0,0,1]])
+
+            #VERSION BARBARE
+            # if i == 0:
+            #     wished_pos[0] += nextDir
+            # if i == 1:
+            #     wished_pos[0] += nextDir
+            # if i == 2:
+            #     wished_pos[0] -= nextDir
+            # if i == 3:
+            #     wished_pos[0] -= nextDir
             wished_pos[2] += height
+
+            wished_pos = wished_pos.dot(matRotZ)
             leg_targets[:,i] = wished_pos[:3]
         return leg_targets
 
@@ -355,17 +365,15 @@ class OmniDirectionalWalkEngine(ParametricWalkEngine):
             nextY = self.getLegY(leg_affix)
             nextDir = self.getLegDir(leg_affix)
             wished_pos = self.robot_model.trunk_from_leg[i].dot(np.concatenate((self.restingPose,[1])))
-            if i == 0:
-                wished_pos[0] += nextDir
-            if i == 1:
-                wished_pos[0] += nextDir
-            if i == 2:
-                wished_pos[0] -= nextDir
-            if i == 3:
-                wished_pos[0] -= nextDir
+            matRotZ = np.array([\
+            [math.cos(nextDir), math.sin(nextDir), 0, 0],\
+            [-math.sin(nextDir), math.cos(nextDir), 0, 0],\
+            [0,0,1,0],\
+            [0,0,0,1]])
             wished_pos[0] += nextX
             wished_pos[1] += nextY
             wished_pos[2] += height
+            wished_pos = wished_pos.dot(matRotZ)
             leg_targets[:,i] = wished_pos[:3]
         return leg_targets
 
